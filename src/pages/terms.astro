@@ -1,0 +1,93 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionRule from '../components/SectionRule.astro';
+---
+<BaseLayout title="Terms of Use" description="Shefa Group terms of use.">
+
+  <div class="page-inner">
+    <section class="section">
+      <SectionRule title="TERMS OF USE" />
+      <div class="terms-content">
+        <p class="last-updated">Last updated: May 2026</p>
+
+        <div class="terms-block">
+          <h3>Acceptance of Terms</h3>
+          <p>By accessing or using this website, you agree to be bound by these Terms of Use. If you do not agree, please do not use this site.</p>
+        </div>
+
+        <div class="terms-block">
+          <h3>Use of Site</h3>
+          <p>This site is provided for informational purposes only. You may not use it for any unlawful purpose or in any manner inconsistent with these terms. You may not attempt to gain unauthorized access to any part of the site or its related systems.</p>
+        </div>
+
+        <div class="terms-block">
+          <h3>Intellectual Property</h3>
+          <p>All content on this site — including text, graphics, logos, and design — is the property of Shefa Group and protected by applicable intellectual property laws. You may not reproduce, distribute, or create derivative works without written permission.</p>
+        </div>
+
+        <div class="terms-block">
+          <h3>Investment Disclaimer</h3>
+          <p>Nothing on this site constitutes investment advice, a solicitation, or an offer to buy or sell any security or investment product. Content is informational only. Shefa Investment Group does not offer securities to the public. Past performance is not indicative of future results. Consult a qualified financial advisor before making any investment decision.</p>
+        </div>
+
+        <div class="terms-block">
+          <h3>Disclaimers</h3>
+          <p>This site is provided "as is" without warranties of any kind, express or implied. Shefa Group makes no representations about the accuracy, completeness, or suitability of any information on this site.</p>
+        </div>
+
+        <div class="terms-block">
+          <h3>Limitation of Liability</h3>
+          <p>To the fullest extent permitted by law, Shefa Group shall not be liable for any direct, indirect, incidental, or consequential damages arising from your use of — or inability to use — this site or its content.</p>
+        </div>
+
+        <div class="terms-block">
+          <h3>Governing Law</h3>
+          <p>These terms are governed by the laws of the State of Texas, without regard to conflict of law principles.</p>
+        </div>
+
+        <div class="terms-block">
+          <h3>Contact</h3>
+          <p>Questions about these terms? Reach us through the <a href="/contact">contact page</a>.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</BaseLayout>
+
+<style>
+  .terms-content {
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-bottom: 80px;
+    margin-top: -20px;
+  }
+
+  .last-updated {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-mute);
+    letter-spacing: 0.06em;
+  }
+
+  .terms-block h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .terms-block p {
+    font-size: 0.9rem;
+    color: var(--text-2);
+    line-height: 1.7;
+  }
+
+  .terms-block a {
+    color: var(--gold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>

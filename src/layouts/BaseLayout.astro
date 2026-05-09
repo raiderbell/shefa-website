@@ -1,17 +1,20 @@
 ---
 import ChromeHeader from '../components/ChromeHeader.astro';
 import Footer from '../components/Footer.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 import '../styles/tokens.css';
 import '../styles/base.css';
 
 interface Props {
   title: string;
   description?: string;
+  footerDisclaimer?: string;
 }
 
 const {
   title,
   description = 'Shefa Group — purpose-driven operating company building scalable businesses and the people who run them.',
+  footerDisclaimer,
 } = Astro.props;
 ---
 <!doctype html>
@@ -35,7 +38,8 @@ const {
     <main>
       <slot />
     </main>
-    <Footer />
+    <Footer disclaimer={footerDisclaimer} />
+    <CookieBanner />
   </body>
 </html>
 

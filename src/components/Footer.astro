@@ -1,4 +1,8 @@
 ---
+interface Props {
+  disclaimer?: string;
+}
+const { disclaimer } = Astro.props;
 const year = new Date().getFullYear();
 ---
 <footer class="footer">
@@ -19,8 +23,17 @@ const year = new Date().getFullYear();
       <a href="/contact">Contact</a>
       <span class="sep">·</span>
       <a href="/privacy">Privacy</a>
+      <span class="sep">·</span>
+      <a href="/terms">Terms</a>
+      <span class="sep">·</span>
+      <a href="/cookies">Cookies</a>
     </div>
   </div>
+  {disclaimer && (
+    <div class="footer-disclaimer">
+      <p>{disclaimer}</p>
+    </div>
+  )}
 </footer>
 
 <style>
@@ -81,5 +94,19 @@ const year = new Date().getFullYear();
 
   .sep {
     color: var(--border-2);
+  }
+
+  .footer-disclaimer {
+    max-width: var(--page-max);
+    margin: 16px auto 0;
+    padding: 12px var(--gutter) 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-disclaimer p {
+    font-size: 0.7rem;
+    color: var(--text-mute);
+    line-height: 1.6;
+    max-width: 640px;
   }
 </style>

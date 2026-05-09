@@ -1,0 +1,78 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionRule from '../components/SectionRule.astro';
+---
+<BaseLayout title="Cookie Policy" description="Shefa Group cookie policy.">
+
+  <div class="page-inner">
+    <section class="section">
+      <SectionRule title="COOKIE POLICY" />
+      <div class="cookies-content">
+        <p class="last-updated">Last updated: May 2026</p>
+
+        <div class="cookies-block">
+          <h3>What are cookies</h3>
+          <p>Cookies are small text files stored on your device when you visit a website. They help the site remember your preferences across visits.</p>
+        </div>
+
+        <div class="cookies-block">
+          <h3>What we use</h3>
+          <p>This site uses only functional cookies — specifically, a cookie to remember your light/dark theme preference and your response to this cookie notice. We do not currently use analytics, advertising, or tracking cookies.</p>
+        </div>
+
+        <div class="cookies-block">
+          <h3>Your choices</h3>
+          <p>You can accept or decline cookies via the notice that appears on your first visit. You can also clear cookies at any time through your browser settings. Declining will not affect your ability to use the site.</p>
+        </div>
+
+        <div class="cookies-block">
+          <h3>Future changes</h3>
+          <p>If we add analytics (such as Plausible) in the future, this policy will be updated before those cookies are set.</p>
+        </div>
+
+        <div class="cookies-block">
+          <h3>Contact</h3>
+          <p>Questions? Reach us through the <a href="/contact">contact page</a>.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</BaseLayout>
+
+<style>
+  .cookies-content {
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-bottom: 80px;
+    margin-top: -20px;
+  }
+
+  .last-updated {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-mute);
+    letter-spacing: 0.06em;
+  }
+
+  .cookies-block h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .cookies-block p {
+    font-size: 0.9rem;
+    color: var(--text-2);
+    line-height: 1.7;
+  }
+
+  .cookies-block a {
+    color: var(--gold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>

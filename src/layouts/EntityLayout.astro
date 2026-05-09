@@ -10,8 +10,13 @@ interface Props {
 }
 
 const { title, entityName, tagline, description } = Astro.props;
+
+const isInvestment = entityName.toLowerCase().includes('investment');
+const footerDisclaimer = isInvestment
+  ? 'Shefa Investment Group does not offer securities. Nothing on this site constitutes investment advice or an offer to sell any security or investment product.'
+  : undefined;
 ---
-<BaseLayout title={title} description={description}>
+<BaseLayout title={title} description={description} footerDisclaimer={footerDisclaimer}>
   <slot name="head" slot="head" />
   <EntitySubHeader entityName={entityName} tagline={tagline} />
   <slot />
