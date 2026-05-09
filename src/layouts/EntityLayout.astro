@@ -1,0 +1,18 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import EntitySubHeader from '../components/EntitySubHeader.astro';
+
+interface Props {
+  title: string;
+  entityName: string;
+  tagline: string;
+  description?: string;
+}
+
+const { title, entityName, tagline, description } = Astro.props;
+---
+<BaseLayout title={title} description={description}>
+  <slot name="head" slot="head" />
+  <EntitySubHeader entityName={entityName} tagline={tagline} />
+  <slot />
+</BaseLayout>

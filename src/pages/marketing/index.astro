@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Marketing" description="Shefa Marketing Group — coming soon.">
+
+  <div class="coming-soon-wrap">
+    <p class="entity-label label gold">SHEFA MARKETING GROUP</p>
+    <div class="rule"></div>
+    <p class="coming-text">Coming soon.</p>
+  </div>
+
+</BaseLayout>
+
+<style>
+  .coming-soon-wrap {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px var(--gutter);
+  }
+
+  .entity-label {
+    margin-bottom: 16px;
+  }
+
+  .rule {
+    width: 64px;
+    height: 1.5px;
+    background: var(--gold);
+    margin-bottom: 24px;
+  }
+
+  .coming-text {
+    font-size: 1.1rem;
+    color: var(--text-mute);
+  }
+</style>

@@ -1,0 +1,124 @@
+---
+import ShefaWordmark from './ShefaWordmark.astro';
+---
+<header class="chrome-header">
+  <div class="chrome-inner">
+    <a href="/" class="wordmark-link" aria-label="Shefa home">
+      <ShefaWordmark />
+    </a>
+    <nav class="chrome-nav" aria-label="Main navigation">
+      <a href="/about">About</a>
+      <a href="/investment">Investment</a>
+      <a href="/advisory">Advisory</a>
+      <a href="/team">Team</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme">
+      <span class="icon-dark">◐</span>
+      <span class="icon-light">○</span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .chrome-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    height: 48px;
+    background: var(--surface-2);
+    border-bottom: 1.5px solid var(--gold);
+  }
+
+  .chrome-inner {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .wordmark-link {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .chrome-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-left: auto;
+  }
+
+  .chrome-nav a {
+    font-size: 0.8rem;
+    color: var(--text-mute);
+    letter-spacing: 0.04em;
+    transition: color 0.2s;
+  }
+
+  .chrome-nav a:hover {
+    color: var(--text);
+  }
+
+  .theme-toggle {
+    margin-left: 16px;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-mute);
+    font-size: 1rem;
+    transition: color 0.2s;
+    line-height: 1;
+  }
+
+  .theme-toggle:hover {
+    color: var(--text);
+  }
+
+  :root:not([data-theme="light"]) .icon-light { display: none; }
+  [data-theme="light"] .icon-dark { display: none; }
+
+  @media (max-width: 640px) {
+    .chrome-nav {
+      gap: 16px;
+    }
+    .chrome-nav a {
+      font-size: 0.75rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .chrome-nav a[href="/advisory"],
+    .chrome-nav a[href="/investment"] {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  const btn = document.getElementById('theme-toggle');
+  const html = document.documentElement;
+
+  const saved = localStorage.getItem('shefa-theme');
+  if (saved === 'light') html.setAttribute('data-theme', 'light');
+
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const isLight = html.getAttribute('data-theme') === 'light';
+      if (isLight) {
+        html.removeAttribute('data-theme');
+        localStorage.setItem('shefa-theme', 'dark');
+      } else {
+        html.setAttribute('data-theme', 'light');
+        localStorage.setItem('shefa-theme', 'light');
+      }
+    });
+  }
+</script>

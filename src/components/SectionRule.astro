@@ -1,0 +1,47 @@
+---
+interface Props {
+  number?: string;
+  title: string;
+}
+const { number, title } = Astro.props;
+---
+<div class="section-rule">
+  <div class="section-rule-label">
+    {number && <span class="section-num">{number}</span>}
+    {number && <span class="section-dash"> — </span>}
+    <span class="section-title">{title}</span>
+  </div>
+</div>
+
+<style>
+  .section-rule {
+    margin-bottom: 40px;
+  }
+
+  .section-rule-label {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding-bottom: 10px;
+    border-bottom: 1.5px solid var(--gold);
+    width: 100%;
+  }
+
+  .section-num {
+    color: var(--gold);
+  }
+
+  .section-dash {
+    color: var(--gold);
+    margin: 0 4px;
+  }
+
+  .section-title {
+    color: var(--gold);
+  }
+</style>

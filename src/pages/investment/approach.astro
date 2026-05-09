@@ -1,0 +1,184 @@
+---
+import EntityLayout from '../../layouts/EntityLayout.astro';
+import SectionRule from '../../components/SectionRule.astro';
+import Callout from '../../components/Callout.astro';
+---
+<EntityLayout
+  title="Investment Approach"
+  entityName="SHEFA INVESTMENT GROUP"
+  tagline="Real estate and small-business acquisitions"
+>
+
+  <div class="page-inner">
+    <section class="section section--sm">
+      <SectionRule title="OUR APPROACH" />
+      <p class="page-intro">We don't chase deals. We wait for the right ones — and move quickly when they appear.</p>
+    </section>
+
+    <section class="section">
+      <SectionRule number="01" title="REAL ESTATE CRITERIA" />
+      <div class="criteria-list">
+        <div class="criteria-item">
+          <h3>Asset classes</h3>
+          <p>Single-family residential, small multifamily (2–8 units), and select commercial properties in stable or improving markets.</p>
+        </div>
+        <div class="criteria-item">
+          <h3>Underwriting discipline</h3>
+          <p>Cash flow from day one. Conservative pro forma assumptions. No speculative appreciation plays. If it doesn't pencil on current rents, we pass.</p>
+        </div>
+        <div class="criteria-item">
+          <h3>Hold orientation</h3>
+          <p>We buy to hold. Short-term flips are not our business. We look for assets that compound quietly over years — not exits that require a favorable market.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <SectionRule number="02" title="SMALL BUSINESS CRITERIA" />
+      <div class="criteria-list">
+        <div class="criteria-item">
+          <h3>Business profile</h3>
+          <p>Owner-operated businesses with $500K–$5M in annual revenue, durable cash flow, and a motivated seller ready to transition.</p>
+        </div>
+        <div class="criteria-item">
+          <h3>What we look for</h3>
+          <p>Room to systematize. A business that runs on the owner's personality is a business we can often improve — if the fundamentals are sound.</p>
+        </div>
+        <div class="criteria-item">
+          <h3>What we pass on</h3>
+          <p>Turnarounds, distressed assets, or businesses that require a specific credential we don't hold. We buy businesses we can actually operate.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <SectionRule number="03" title="HOW WE CLOSE" />
+      <div class="process-steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <div>
+            <h3>Initial conversation</h3>
+            <p>We listen first. Tell us what you have, what you want, and what timeline matters to you.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <div>
+            <h3>Underwriting</h3>
+            <p>We review financials, assess operations, and run our own numbers. No LOI until we've done the work.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <div>
+            <h3>Letter of intent</h3>
+            <p>If the deal makes sense, we move to LOI quickly. We don't shop deals or use LOIs as negotiating leverage.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">04</span>
+          <div>
+            <h3>Close</h3>
+            <p>We close what we sign. Our word is our track record.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <Callout variant="gold">
+        <p>If you're exploring a sale or partnership and want a direct conversation, reach out. We respond within one business day.</p>
+      </Callout>
+      <div class="section-cta">
+        <a href="/investment/partner-with-us" class="btn-gold">Partner With Us</a>
+      </div>
+    </section>
+  </div>
+
+</EntityLayout>
+
+<style>
+  .page-intro {
+    font-size: 1.05rem;
+    color: var(--text-2);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-top: -20px;
+    margin-bottom: 0;
+  }
+
+  .criteria-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 680px;
+    margin-bottom: 48px;
+  }
+
+  .criteria-item h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .criteria-item p {
+    font-size: 0.9rem;
+    color: var(--text-2);
+    line-height: 1.7;
+  }
+
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 680px;
+    margin-bottom: 48px;
+  }
+
+  .step {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .step-num {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+    padding-top: 3px;
+  }
+
+  .step h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .step p {
+    font-size: 0.88rem;
+    color: var(--text-2);
+    line-height: 1.6;
+  }
+
+  .section-cta {
+    margin-top: 24px;
+  }
+
+  .btn-gold {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 12px 28px;
+    border-radius: 2px;
+    transition: opacity 0.2s;
+  }
+
+  .btn-gold:hover { opacity: 0.85; }
+</style>

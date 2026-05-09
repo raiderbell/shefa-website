@@ -1,0 +1,29 @@
+---
+interface Props {
+  gap?: string;
+  align?: 'start' | 'center' | 'end';
+}
+const { gap = 'var(--gutter)', align = 'start' } = Astro.props;
+---
+<div class="two-col" style={`--col-gap: ${gap}; align-items: ${align};`}>
+  <div class="col-left">
+    <slot name="left" />
+  </div>
+  <div class="col-right">
+    <slot name="right" />
+  </div>
+</div>
+
+<style>
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--col-gap);
+  }
+
+  @media (max-width: 768px) {
+    .two-col {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

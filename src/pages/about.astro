@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionRule from '../components/SectionRule.astro';
+import Callout from '../components/Callout.astro';
+---
+<BaseLayout title="About" description="Shefa — Hebrew for abundance. A name with intention and a business built around it.">
+
+  <div class="page-inner">
+    <section class="section">
+      <div class="page-header">
+        <p class="label gold">ABOUT SHEFA</p>
+        <div class="header-rule"></div>
+        <p class="page-subtitle">A name with intention. A business built around it.</p>
+      </div>
+
+      <div class="meaning-block">
+        <p class="hebrew-large" lang="he" dir="rtl">שפע</p>
+        <p class="meaning-text">
+          Shefa (שפע) — Hebrew for <em>abundance</em>, or <em>overflow</em>. Not material excess. Spiritual abundance that overflows into every other form: relationships, work, generosity, prosperity.
+        </p>
+        <p class="meaning-text">
+          The name is a declaration. Everything we build — the acquisitions, the operating systems, the partnerships — starts from this premise: that when businesses are run well and led with integrity, abundance follows. And when it does, it should go somewhere meaningful.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <SectionRule number="01" title="HOW WE OPERATE" />
+      <div class="principles">
+        <div class="principle">
+          <h3>Discipline before ambition.</h3>
+          <p>We underwrite conservatively. We scope engagements honestly. We don't promise what we can't deliver. Premium positioning is a hard rule — and it starts with not overselling ourselves.</p>
+        </div>
+        <div class="principle">
+          <h3>Operators, not advisors.</h3>
+          <p>We've built and run businesses. That's the lens we bring to every acquisition and every engagement. We know what it costs to get something operational — and we respect that cost.</p>
+        </div>
+        <div class="principle">
+          <h3>Purpose is not a tagline.</h3>
+          <p>We build businesses and fund missions. The two are not in conflict. We don't sand the mission out of our work — it's the reason the work is worth doing.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <Callout variant="navy">
+        <p>We are not trying to be the largest. We are trying to be the most disciplined — and the most purposeful.</p>
+      </Callout>
+    </section>
+
+    <section class="section section--sm">
+      <SectionRule number="02" title="THE ENTITIES" />
+      <div class="entity-list">
+        <div class="entity-item">
+          <h3><a href="/investment">Shefa Investment Group →</a></h3>
+          <p>Real estate and small-business acquisitions. Disciplined underwriting. Long-term hold orientation.</p>
+        </div>
+        <div class="entity-item">
+          <h3><a href="/advisory">Shefa Advisory Group →</a></h3>
+          <p>Fractional COO and CRO services. Operating systems that stick — built by operators, not consultants.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</BaseLayout>
+
+<style>
+  .page-header {
+    margin-bottom: 64px;
+  }
+
+  .header-rule {
+    width: 100%;
+    height: 1.5px;
+    background: var(--gold);
+    margin: 12px 0 24px;
+  }
+
+  .page-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-2);
+  }
+
+  .meaning-block {
+    max-width: 680px;
+    margin-bottom: 48px;
+  }
+
+  .hebrew-large {
+    font-family: var(--font-hebrew);
+    font-size: clamp(2.5rem, 7vw, 5rem);
+    color: var(--gold);
+    margin-bottom: 24px;
+    line-height: 1;
+  }
+
+  .meaning-text {
+    font-size: 1rem;
+    color: var(--text-2);
+    line-height: 1.8;
+    margin-bottom: 16px;
+  }
+
+  .meaning-text em {
+    color: var(--text);
+    font-style: italic;
+  }
+
+  .principles {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 680px;
+    margin-bottom: 48px;
+  }
+
+  .principle h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .principle p {
+    font-size: 0.95rem;
+    color: var(--text-2);
+    line-height: 1.7;
+  }
+
+  .entity-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 680px;
+  }
+
+  .entity-item h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  .entity-item h3 a {
+    color: var(--text);
+    transition: color 0.2s;
+  }
+
+  .entity-item h3 a:hover {
+    color: var(--gold);
+  }
+
+  .entity-item p {
+    font-size: 0.9rem;
+    color: var(--text-2);
+    line-height: 1.6;
+  }
+</style>

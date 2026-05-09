@@ -1,0 +1,40 @@
+---
+interface Props {
+  variant?: 'navy' | 'gold' | 'green';
+}
+const { variant = 'navy' } = Astro.props;
+---
+<div class={`callout callout--${variant}`}>
+  <slot />
+</div>
+
+<style>
+  .callout {
+    border-left: 4px solid;
+    padding: 20px 24px;
+    background: var(--surface);
+  }
+
+  .callout--navy {
+    border-color: var(--navy);
+  }
+
+  .callout--gold {
+    border-color: var(--gold);
+  }
+
+  .callout--green {
+    border-color: var(--green);
+  }
+
+  .callout :global(p) {
+    margin: 0;
+    color: var(--text-2);
+    font-style: italic;
+  }
+
+  .callout :global(strong) {
+    color: var(--text);
+    font-style: normal;
+  }
+</style>

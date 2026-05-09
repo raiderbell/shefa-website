@@ -1,0 +1,46 @@
+---
+// ShefaWordmark.astro — purely cosmetic, no language switch
+---
+<span class="wordmark" id="shefa-wordmark">
+  <span class="latin" aria-label="Shefa">SHEFA</span>
+  <span class="hebrew" lang="he" dir="rtl" aria-hidden="true">שפע</span>
+</span>
+
+<style>
+  .wordmark {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+  }
+  .latin, .hebrew {
+    display: inline-block;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  .hebrew {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-family: var(--font-hebrew);
+    font-size: 1.1rem;
+    letter-spacing: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .wordmark.flipped .latin  { opacity: 0; transform: scale(0.9); }
+  .wordmark.flipped .hebrew { opacity: 1; transform: scale(1); pointer-events: auto; }
+</style>
+
+<script>
+  const w = document.getElementById('shefa-wordmark');
+  if (w) {
+    if (sessionStorage.getItem('shefa-hebrew') === '1') w.classList.add('flipped');
+    w.addEventListener('click', () => {
+      w.classList.toggle('flipped');
+      sessionStorage.setItem('shefa-hebrew', w.classList.contains('flipped') ? '1' : '0');
+    });
+  }
+</script>

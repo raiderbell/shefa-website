@@ -1,0 +1,147 @@
+---
+import EntityLayout from '../../layouts/EntityLayout.astro';
+import HeroSection from '../../components/HeroSection.astro';
+import SectionRule from '../../components/SectionRule.astro';
+import Callout from '../../components/Callout.astro';
+---
+<EntityLayout
+  title="Advisory"
+  entityName="SHEFA ADVISORY GROUP"
+  tagline="Fractional COO and CRO consulting"
+  description="Shefa Advisory Group provides fractional COO and CRO services to growing companies. We install operating systems that stick — then step back when you're ready to run them yourself."
+>
+
+  <HeroSection
+    headline="We install operating systems that stick."
+    body="Shefa Advisory Group provides fractional COO and CRO services to growing companies. We install operating systems that stick — then step back when you're ready to run them yourself."
+    ctaSecondaryLabel="Our Approach"
+    ctaSecondaryHref="/advisory/approach"
+    ctaLabel="Book Discovery Call"
+    ctaHref="/advisory/discovery-call"
+  />
+
+  <div class="page-inner">
+    <section class="section">
+      <SectionRule number="01" title="WHAT WE DO" />
+      <div class="service-grid">
+        <div class="service-card">
+          <h3>Fractional COO</h3>
+          <p>We step into the operations seat — or alongside it. Process design, team structure, vendor management, and the unglamorous work that keeps a company moving.</p>
+        </div>
+        <div class="service-card">
+          <h3>Fractional CRO</h3>
+          <p>Revenue architecture: pipeline design, sales process, CRM implementation, and the systems that turn activity into predictable results.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <SectionRule number="02" title="WHO WE SERVE" />
+      <div class="serve-list">
+        <div class="serve-item">
+          <h3>Companies between $1M and $10M revenue</h3>
+          <p>Past the startup phase. Not yet ready for a full-time executive. Growing faster than their current systems can handle.</p>
+        </div>
+        <div class="serve-item">
+          <h3>Founders who are operators</h3>
+          <p>You built something real. You know what you need. You want a partner who speaks in outcomes, not frameworks.</p>
+        </div>
+        <div class="serve-item">
+          <h3>Teams in transition</h3>
+          <p>Post-acquisition, post-funding, or post-leadership change. You need someone to stabilize operations while you build the next layer.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <Callout variant="navy">
+        <p>We don't write reports and hand them off. We work inside your business until the system runs without us — then we step back.</p>
+      </Callout>
+    </section>
+
+    <section class="section cta-section">
+      <h2 class="cta-heading">Ready to talk about your business?</h2>
+      <a href="/advisory/discovery-call" class="btn-gold">Book a Discovery Call</a>
+    </section>
+  </div>
+
+</EntityLayout>
+
+<style>
+  .service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .service-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 28px;
+  }
+
+  .service-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .service-card p {
+    font-size: 0.88rem;
+    color: var(--text-2);
+    line-height: 1.7;
+  }
+
+  .serve-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 680px;
+    margin-bottom: 48px;
+  }
+
+  .serve-item h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .serve-item p {
+    font-size: 0.9rem;
+    color: var(--text-2);
+    line-height: 1.7;
+  }
+
+  .cta-section {
+    text-align: center;
+    padding-bottom: 80px;
+  }
+
+  .cta-heading {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 28px;
+  }
+
+  .btn-gold {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 14px 32px;
+    border-radius: 2px;
+    transition: opacity 0.2s;
+  }
+
+  .btn-gold:hover { opacity: 0.85; }
+
+  @media (max-width: 640px) {
+    .service-grid { grid-template-columns: 1fr; }
+  }
+</style>

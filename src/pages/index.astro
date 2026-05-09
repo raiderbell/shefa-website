@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import HeroSection from '../components/HeroSection.astro';
+import SectionRule from '../components/SectionRule.astro';
+import TwoColumn from '../components/TwoColumn.astro';
+import Callout from '../components/Callout.astro';
+---
+<BaseLayout title="Shefa Group" description="Shefa Group — purpose-driven operating company building scalable businesses and the people who run them.">
+
+  <HeroSection
+    headline="Operators. Partners. Purpose."
+    body="Shefa Group is a purpose-driven operating company building scalable businesses and the people who run them."
+    ctaLabel="Work With Us"
+    ctaHref="/contact"
+    logoSrc="/images/shefa-logo.png"
+  />
+
+  <section class="section-what">
+    <div class="page-inner">
+      <SectionRule number="01" title="WHAT IS SHEFA" />
+      <div class="what-content">
+        <p class="hebrew-display" lang="he" dir="rtl">שפע</p>
+        <p class="what-text">
+          Shefa (שפע) — Hebrew for <em>abundance</em>, or <em>overflow</em>. Spiritual abundance that overflows into every other form: relationships, work, generosity, prosperity.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-entities">
+    <div class="page-inner">
+      <TwoColumn>
+        <div slot="left" class="entity-card">
+          <h3 class="entity-card-title">Shefa Investment Group</h3>
+          <p class="entity-card-body">Real estate and small-business acquisitions. We buy, we build, we hold.</p>
+          <a href="/investment/partner-with-us" class="entity-card-link">Partner With Us →</a>
+        </div>
+        <div slot="right" class="entity-card">
+          <h3 class="entity-card-title">Shefa Advisory Group</h3>
+          <p class="entity-card-body">Fractional COO and CRO consulting. We install operating systems that stick.</p>
+          <a href="/advisory/discovery-call" class="entity-card-link">Book Discovery Call →</a>
+        </div>
+      </TwoColumn>
+    </div>
+  </section>
+
+  <section class="section-mission">
+    <div class="page-inner">
+      <Callout variant="navy">
+        <p>We build businesses and fund missions. The two are not in conflict.</p>
+      </Callout>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .section-what {
+    padding: 80px 0;
+    background: var(--bg-2);
+    text-align: center;
+  }
+
+  .what-content {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  .hebrew-display {
+    font-family: var(--font-hebrew);
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    color: var(--gold);
+    margin-bottom: 24px;
+    line-height: 1;
+  }
+
+  .what-text {
+    font-size: 1rem;
+    color: var(--text-2);
+    line-height: 1.8;
+  }
+
+  .what-text em {
+    color: var(--text);
+    font-style: italic;
+  }
+
+  .section-entities {
+    padding: 80px 0;
+  }
+
+  .entity-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .entity-card-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+
+  .entity-card-body {
+    font-size: 0.9rem;
+    color: var(--text-2);
+    line-height: 1.6;
+    flex: 1;
+  }
+
+  .entity-card-link {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s;
+  }
+
+  .entity-card-link:hover {
+    opacity: 0.8;
+  }
+
+  .section-mission {
+    padding: 0 0 80px;
+  }
+</style>

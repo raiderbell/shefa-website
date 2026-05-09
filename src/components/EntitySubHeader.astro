@@ -1,0 +1,52 @@
+---
+interface Props {
+  entityName: string;
+  tagline: string;
+}
+const { entityName, tagline } = Astro.props;
+---
+<div class="entity-subheader">
+  <div class="entity-inner">
+    <span class="entity-name">{entityName}</span>
+    <span class="entity-tagline">{tagline}</span>
+  </div>
+</div>
+
+<style>
+  .entity-subheader {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    height: 32px;
+  }
+
+  .entity-inner {
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .entity-name {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 600;
+  }
+
+  .entity-tagline {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    color: var(--text-mute);
+  }
+
+  @media (max-width: 600px) {
+    .entity-tagline { display: none; }
+  }
+</style>

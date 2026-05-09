@@ -1,0 +1,215 @@
+---
+import EntityLayout from '../../layouts/EntityLayout.astro';
+import SectionRule from '../../components/SectionRule.astro';
+import Callout from '../../components/Callout.astro';
+---
+<EntityLayout
+  title="Advisory Approach"
+  entityName="SHEFA ADVISORY GROUP"
+  tagline="Fractional COO and CRO consulting"
+>
+
+  <div class="page-inner">
+    <section class="section section--sm">
+      <SectionRule title="HOW WE ENGAGE" />
+      <p class="page-intro">Every engagement is scoped before it starts. You know the investment. You know the outcome. No surprises.</p>
+    </section>
+
+    <section class="section">
+      <SectionRule number="01" title="ENGAGEMENT MODEL" />
+      <div class="model-list">
+        <div class="model-item">
+          <h3>Fractional, not part-time</h3>
+          <p>Fractional means embedded. We're in your Slack, in your meetings, in your numbers. We hold the seat — we don't consult from a distance.</p>
+        </div>
+        <div class="model-item">
+          <h3>Scoped outcomes, not open hours</h3>
+          <p>Every engagement starts with a defined outcome: what gets built, what gets installed, what "done" looks like. We don't bill hours into the unknown.</p>
+        </div>
+        <div class="model-item">
+          <h3>Exit by design</h3>
+          <p>The goal of every engagement is to make ourselves unnecessary. We document what we build, train the people who will run it, and exit on time.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <SectionRule number="02" title="WHAT WE BUILD" />
+      <div class="build-list">
+        <div class="build-item">
+          <span class="build-label">Operations</span>
+          <p>SOPs, org design, hiring frameworks, vendor management, project management infrastructure.</p>
+        </div>
+        <div class="build-item">
+          <span class="build-label">Revenue</span>
+          <p>Sales process design, pipeline architecture, CRM build-out, forecasting, team accountability systems.</p>
+        </div>
+        <div class="build-item">
+          <span class="build-label">Leadership</span>
+          <p>Management cadences, performance frameworks, communication structures that don't require a founder to hold them together.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <SectionRule number="03" title="HOW TO START" />
+      <div class="process-steps">
+        <div class="step">
+          <span class="step-num">01</span>
+          <div>
+            <h3>Discovery call</h3>
+            <p>30 minutes. You tell us where the friction is. We tell you if we're the right fit and what an engagement would look like.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">02</span>
+          <div>
+            <h3>Scoping</h3>
+            <p>We document the outcome, the timeline, and the investment. You decide whether to proceed.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">03</span>
+          <div>
+            <h3>Engagement</h3>
+            <p>We get to work. Milestones are clear. Progress is visible. You're never wondering what we're doing.</p>
+          </div>
+        </div>
+        <div class="step">
+          <span class="step-num">04</span>
+          <div>
+            <h3>Handoff</h3>
+            <p>We document everything, train the team, and step back. The system runs without us — that's the point.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <Callout variant="navy">
+        <p>If this sounds like what your business needs, the next step is a 30-minute discovery call. No sales pitch — just an honest conversation about fit.</p>
+      </Callout>
+      <div class="section-cta">
+        <a href="/advisory/discovery-call" class="btn-gold">Book a Discovery Call</a>
+      </div>
+    </section>
+  </div>
+
+</EntityLayout>
+
+<style>
+  .page-intro {
+    font-size: 1.05rem;
+    color: var(--text-2);
+    max-width: 560px;
+    line-height: 1.7;
+    margin-top: -20px;
+    margin-bottom: 0;
+  }
+
+  .model-list, .serve-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 680px;
+    margin-bottom: 48px;
+  }
+
+  .model-item h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+
+  .model-item p {
+    font-size: 0.9rem;
+    color: var(--text-2);
+    line-height: 1.7;
+  }
+
+  .build-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 680px;
+    margin-bottom: 48px;
+  }
+
+  .build-item {
+    display: flex;
+    gap: 24px;
+    align-items: baseline;
+  }
+
+  .build-label {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--gold);
+    flex-shrink: 0;
+    width: 90px;
+  }
+
+  .build-item p {
+    font-size: 0.9rem;
+    color: var(--text-2);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 680px;
+    margin-bottom: 48px;
+  }
+
+  .step {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+
+  .step-num {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--gold);
+    letter-spacing: 0.1em;
+    flex-shrink: 0;
+    padding-top: 3px;
+  }
+
+  .step h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .step p {
+    font-size: 0.88rem;
+    color: var(--text-2);
+    line-height: 1.6;
+  }
+
+  .section-cta {
+    margin-top: 24px;
+  }
+
+  .btn-gold {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    padding: 12px 28px;
+    border-radius: 2px;
+    transition: opacity 0.2s;
+  }
+
+  .btn-gold:hover { opacity: 0.85; }
+</style>

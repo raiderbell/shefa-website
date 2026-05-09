@@ -1,0 +1,134 @@
+---
+interface Props {
+  headline: string;
+  body: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  ctaSecondaryLabel?: string;
+  ctaSecondaryHref?: string;
+  logoSrc?: string;
+}
+const {
+  headline,
+  body,
+  ctaLabel,
+  ctaHref,
+  ctaSecondaryLabel,
+  ctaSecondaryHref,
+  logoSrc,
+} = Astro.props;
+---
+<section class="hero">
+  <div class="hero-inner page-inner">
+    {logoSrc && (
+      <div class="hero-logo">
+        <img src={logoSrc} alt="Shefa Group" />
+      </div>
+    )}
+    <div class="hero-content">
+      <h1 class="hero-headline">{headline}</h1>
+      <p class="hero-body">{body}</p>
+      {(ctaLabel || ctaSecondaryLabel) && (
+        <div class="hero-ctas">
+          {ctaSecondaryLabel && ctaSecondaryHref && (
+            <a href={ctaSecondaryHref} class="btn btn--outline">{ctaSecondaryLabel}</a>
+          )}
+          {ctaLabel && ctaHref && (
+            <a href={ctaHref} class="btn btn--gold">{ctaLabel}</a>
+          )}
+        </div>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 80px 0 64px;
+  }
+
+  .hero-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .hero-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-logo img {
+    max-width: 320px;
+    width: 100%;
+  }
+
+  .hero-headline {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 20px;
+  }
+
+  .hero-body {
+    font-size: 1.05rem;
+    color: var(--text-2);
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 480px;
+  }
+
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    transition: opacity 0.2s;
+    border-radius: 2px;
+  }
+
+  .btn:hover {
+    opacity: 0.85;
+  }
+
+  .btn--gold {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  .btn--outline {
+    border: 1.5px solid var(--border-2);
+    color: var(--text-2);
+  }
+
+  .btn--outline:hover {
+    border-color: var(--text-mute);
+    color: var(--text);
+    opacity: 1;
+  }
+
+  @media (max-width: 768px) {
+    .hero-inner {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .hero-logo {
+      order: -1;
+    }
+
+    .hero-logo img {
+      max-width: 200px;
+    }
+  }
+</style>

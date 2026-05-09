@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionRule from '../components/SectionRule.astro';
+---
+<BaseLayout title="Privacy" description="Shefa Group privacy policy.">
+
+  <div class="page-inner">
+    <section class="section">
+      <SectionRule title="PRIVACY POLICY" />
+      <div class="privacy-content">
+        <p class="last-updated">Last updated: May 2026</p>
+
+        <div class="privacy-block">
+          <h3>What we collect</h3>
+          <p>When you submit an inquiry through our contact forms, we collect your name, email address, company name (if provided), and the message you send. We don't collect anything else.</p>
+        </div>
+
+        <div class="privacy-block">
+          <h3>How we use it</h3>
+          <p>We use your information to respond to your inquiry and, with your permission, to follow up about a potential engagement. We don't sell your information. We don't add you to a mailing list without your explicit consent.</p>
+        </div>
+
+        <div class="privacy-block">
+          <h3>Form submission</h3>
+          <p>Our contact forms are processed by Web3Forms. Your submission is delivered to our inbox. Web3Forms privacy policy applies to transmission.</p>
+        </div>
+
+        <div class="privacy-block">
+          <h3>Questions</h3>
+          <p>Contact us through the <a href="/contact">contact page</a>.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</BaseLayout>
+
+<style>
+  .privacy-content {
+    max-width: 640px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding-bottom: 80px;
+    margin-top: -20px;
+  }
+
+  .last-updated {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-mute);
+    letter-spacing: 0.06em;
+  }
+
+  .privacy-block h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .privacy-block p {
+    font-size: 0.9rem;
+    color: var(--text-2);
+    line-height: 1.7;
+  }
+
+  .privacy-block a {
+    color: var(--gold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+</style>

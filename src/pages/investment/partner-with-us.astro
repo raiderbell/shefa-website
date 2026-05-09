@@ -1,0 +1,38 @@
+---
+import EntityLayout from '../../layouts/EntityLayout.astro';
+import SectionRule from '../../components/SectionRule.astro';
+import IntakeForm from '../../components/IntakeForm.astro';
+---
+<EntityLayout
+  title="Partner With Us"
+  entityName="SHEFA INVESTMENT GROUP"
+  tagline="Real estate and small-business acquisitions"
+>
+
+  <div class="page-inner">
+    <section class="section">
+      <SectionRule title="PARTNER WITH US" />
+      <p class="page-intro">Tell us what you're working on. We'll respond within one business day.</p>
+      <div class="form-wrap">
+        <IntakeForm entity="investment" />
+      </div>
+    </section>
+  </div>
+
+</EntityLayout>
+
+<style>
+  .page-intro {
+    font-size: 1rem;
+    color: var(--text-2);
+    max-width: 520px;
+    line-height: 1.7;
+    margin-top: -20px;
+    margin-bottom: 40px;
+  }
+
+  .form-wrap {
+    max-width: 640px;
+    padding-bottom: 80px;
+  }
+</style>

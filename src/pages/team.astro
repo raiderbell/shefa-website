@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionRule from '../components/SectionRule.astro';
+import BioCard from '../components/BioCard.astro';
+---
+<BaseLayout title="Team" description="The people behind Shefa Group.">
+
+  <div class="page-inner">
+    <section class="section section--sm">
+      <SectionRule title="THE TEAM" />
+      <p class="page-sub">The people behind Shefa Group.</p>
+    </section>
+
+    <div class="bios">
+      <BioCard
+        name="Nathan Smith"
+        role="Chief Innovation Officer"
+        initial="N"
+        photo="/images/team/nathan.png"
+        bio="Former flight paramedic and current GM at Force 6 Worldwide — a world-leading water rescue equipment manufacturer trusted by first responders since 1998. Nathan has spent 15 years building high-performing teams in demanding environments. He brings that same discipline to Shefa: designing the systems, processes, and structures that let businesses scale without chaos."
+        tags={["Operations", "Systems Design", "Strategy"]}
+        career="Flight Paramedic → GM, Force 6 Worldwide → COO, Shefa Group"
+      />
+      <BioCard
+        name="Robin Schnorrenberg"
+        role="Founder & CEO"
+        initial="R"
+        photo="/images/team/robin.png"
+        bio="25 years building organizations across healthcare, hospitality, financial services, and executive operations — including growing casino departments from 60 to 3,000+ employees. Robin leads Shefa's strategy, acquisitions, and capital partnerships. She has a track record of turning complexity into scalable, high-performing enterprises."
+        tags={["Strategy", "Acquisitions", "Capital Formation"]}
+        career="Executive Operations · Financial Services · CEO, Shefa Group"
+      />
+      <BioCard
+        name="Emily Ley Palmieri"
+        role="Chief Financial Officer"
+        initial="E"
+        photo="/images/team/emily.png"
+        bio="Institutional-level financial discipline built across investment banking, corporate finance, and real estate advisory — including roles at JPMorgan Chase (VP), Citigroup, and the Federal Reserve Board. Emily leads financial modeling, underwriting, and transaction structuring at Shefa, bringing a stewardship-driven approach to every deal."
+        tags={["Financial Modeling", "Deal Underwriting", "Capital Markets"]}
+        career="Vanderbilt · Georgetown MBA · JPMorgan Chase VP → CFO, Shefa Group"
+      />
+      <BioCard
+        name="Russell Rowe"
+        role="Chief Operations Officer, Execution"
+        initial="R"
+        photo="/images/team/russ.png"
+        bio="30 years of leadership across energy services, casino operations, software, and real estate investment. Russell provides the operational stability that lets the team move confidently on complex transactions — calm under pressure, detail-oriented, and disciplined on compliance and risk."
+        tags={["Operational Analysis", "Risk Assessment", "Vendor Management"]}
+        career="Energy Services · Casino Operations · Real Estate Investment"
+      />
+      <BioCard
+        name="Carolina Calvo, PA-C"
+        role="Chief Healthcare Officer"
+        initial="C"
+        photo="/images/team/carolina.png"
+        bio="Physician Assistant with a clinical and operational background in healthcare practice management. Carolina raised a Medicare quality score from 3.4 to 4.2, increased daily patient volume by 50% through workflow redesign, and has kept her teams stable and engaged for 5+ years. At Shefa, she leads billing oversight, healthcare compliance, and provider relations."
+        tags={["Healthcare Operations", "Quality Improvement", "Team Development"]}
+        career="Clinical Practice Management → Chief Healthcare Officer, Shefa Group"
+      />
+      <BioCard
+        name="Blakelie Rainbow"
+        role="Chief Relations Officer"
+        initial="B"
+        photo="/images/team/blakelie.png"
+        bio="Real estate and business development professional with four-plus years growing portfolios for entrepreneurs across the country and a network of more than 16,000 operators. Blakelie leads relationship development, deal sourcing, and strategic partnerships — and is expanding into capital raising and investor relations."
+        tags={["Relationship Development", "Deal Sourcing", "Investor Relations"]}
+        career="Real Estate Acquisitions · Business Development → CRO, Shefa Group"
+      />
+    </div>
+  </div>
+
+</BaseLayout>
+
+<style>
+  .page-sub {
+    font-size: 1.05rem;
+    color: var(--text-2);
+    margin-top: -20px;
+    margin-bottom: 0;
+  }
+
+  .bios {
+    padding-bottom: 80px;
+  }
+</style>

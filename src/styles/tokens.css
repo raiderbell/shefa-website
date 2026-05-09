@@ -1,0 +1,52 @@
+:root {
+  /* Brand constants — never change */
+  --navy:        #1C2B4A;
+  --gold:        #C4963A;
+  --gold-soft:   #D4A04A;
+  --blue:        #2A6FDB;
+  --blue-soft:   #4A8AE8;
+  --green:       #3A7D44;
+  --muted-dark:  #99AABB;
+
+  /* Layout */
+  --page-max:  1200px;
+  --gutter:    clamp(20px, 4vw, 56px);
+  --rule:      1.5px;
+
+  /* Font stacks */
+  --font-sans:   "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-mono:   ui-monospace, "SFMono-Regular", "Menlo", "Consolas", monospace;
+  --font-hebrew: "Frank Ruhl Libre", "Heebo", serif;
+}
+
+/* Dark theme (default) */
+:root {
+  --bg:        #0B0F1C;
+  --bg-2:      #0E1424;
+  --surface:   #131A2E;
+  --surface-2: #1C2B4A;
+  --border:    #2A3854;
+  --border-2:  #3B4A6E;
+  --text:      #E8ECF2;
+  --text-2:    #C2CBD8;
+  --text-mute: #8A97AA;
+  --field-bg:  #131A2E;
+  --field-bd:  #2A3854;
+  --shadow:    0 1px 0 rgba(255,255,255,0.04);
+}
+
+/* Light theme */
+[data-theme="light"] {
+  --bg:        #FFFFFF;
+  --bg-2:      #FAFAF7;
+  --surface:   #F8F8F8;
+  --surface-2: #F5F5F5;
+  --border:    #CCCCCC;
+  --border-2:  #B5B5B5;
+  --text:      #1A1A1A;
+  --text-2:    #2A2A2A;
+  --text-mute: #777777;
+  --field-bg:  #F8F8F8;
+  --field-bd:  #CCCCCC;
+  --shadow:    none;
+}

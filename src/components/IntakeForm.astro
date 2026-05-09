@@ -1,0 +1,223 @@
+---
+interface Props {
+  entity?: 'investment' | 'advisory' | 'contact';
+}
+const { entity = 'contact' } = Astro.props;
+
+const showTabs = entity === 'contact';
+---
+
+{showTabs && (
+  <div class="intent-tabs" role="tablist" aria-label="Inquiry type">
+    <button class="tab tab--active" data-tab="investment" role="tab" aria-selected="true">
+      <span class="tab-title">Investment Inquiry</span>
+      <span class="tab-sub">For potential deal partners</span>
+    </button>
+    <button class="tab" data-tab="advisory" role="tab" aria-selected="false">
+      <span class="tab-title">Advisory Inquiry</span>
+      <span class="tab-sub">For consulting engagements</span>
+    </button>
+    <button class="tab" data-tab="general" role="tab" aria-selected="false">
+      <span class="tab-title">General</span>
+      <span class="tab-sub">Everything else</span>
+    </button>
+  </div>
+)}
+
+<form
+  class="intake-form"
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  id="intake-form"
+>
+  <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+  <input type="hidden" name="subject" value={`Shefa ${entity === 'investment' ? 'Investment' : entity === 'advisory' ? 'Advisory' : 'Website'} Inquiry`} id="form-subject" />
+  <input type="hidden" name="inquiry_type" value={entity} id="inquiry-type" />
+  <input type="checkbox" name="botcheck" style="display:none" />
+
+  <div class="field">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name" />
+  </div>
+
+  <div class="field">
+    <label for="company">Company <span class="optional">(Optional)</span></label>
+    <input type="text" id="company" name="company" placeholder="Optional" autocomplete="organization" />
+  </div>
+
+  <div class="field">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+  </div>
+
+  <div class="field">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Tell us what you're working on…" rows="6" required></textarea>
+  </div>
+
+  <button type="submit" class="submit-btn">Send Message</button>
+  <p class="form-note">We respond within one business day.</p>
+</form>
+
+<style>
+  /* Intent tabs */
+  .intent-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+
+  .tab {
+    text-align: left;
+    padding: 16px 20px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid transparent;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+  }
+
+  .tab:hover {
+    border-color: var(--border-2);
+    border-left-color: transparent;
+    background: var(--surface-2);
+  }
+
+  .tab--active {
+    border-left-color: var(--gold);
+    background: var(--surface-2);
+  }
+
+  .tab-title {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .tab-sub {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-mute);
+  }
+
+  /* Form */
+  .intake-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  label {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--text-2);
+    letter-spacing: 0.02em;
+  }
+
+  .optional {
+    font-weight: 400;
+    color: var(--text-mute);
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    background: var(--field-bg);
+    border: 1px solid var(--field-bd);
+    color: var(--text);
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    padding: 12px 16px;
+    border-radius: 2px;
+    width: 100%;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--text-mute);
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--gold);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 140px;
+  }
+
+  .submit-btn {
+    background: var(--gold);
+    color: var(--navy);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    padding: 16px;
+    width: 100%;
+    cursor: pointer;
+    border: none;
+    border-radius: 2px;
+    transition: opacity 0.2s;
+  }
+
+  .submit-btn:hover {
+    opacity: 0.88;
+  }
+
+  .form-note {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-mute);
+    text-align: center;
+    letter-spacing: 0.04em;
+    margin-top: -8px;
+  }
+
+  @media (max-width: 640px) {
+    .intent-tabs {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  const tabs = document.querySelectorAll<HTMLButtonElement>('.tab');
+  const subjectInput = document.getElementById('form-subject') as HTMLInputElement | null;
+  const inquiryInput = document.getElementById('inquiry-type') as HTMLInputElement | null;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => {
+        t.classList.remove('tab--active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('tab--active');
+      tab.setAttribute('aria-selected', 'true');
+
+      const type = tab.dataset.tab ?? 'general';
+      if (inquiryInput) inquiryInput.value = type;
+      if (subjectInput) {
+        const labels: Record<string, string> = {
+          investment: 'Shefa Investment Inquiry',
+          advisory: 'Shefa Advisory Inquiry',
+          general: 'Shefa Website Inquiry',
+        };
+        subjectInput.value = labels[type] ?? 'Shefa Website Inquiry';
+      }
+    });
+  });
+</script>
