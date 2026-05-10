@@ -1,12 +1,12 @@
 :root {
   /* Brand constants — never change */
-  --navy:        #1C2B4A;
+  --navy:        #2A2A27;
   --gold:        #C4963A;
   --gold-soft:   #D4A04A;
   --blue:        #2A6FDB;
   --blue-soft:   #4A8AE8;
   --green:       #3A7D44;
-  --muted-dark:  #99AABB;
+  --muted-dark:  #9A9A97;
 
   /* Layout */
   --page-max:  1200px;
@@ -21,17 +21,17 @@
 
 /* Dark theme (default) */
 :root {
-  --bg:        #0B0F1C;
-  --bg-2:      #0E1424;
-  --surface:   #131A2E;
-  --surface-2: #1C2B4A;
-  --border:    #2A3854;
-  --border-2:  #3B4A6E;
-  --text:      #E8ECF2;
-  --text-2:    #C2CBD8;
-  --text-mute: #8A97AA;
-  --field-bg:  #131A2E;
-  --field-bd:  #2A3854;
+  --bg:        #0F0F0E;
+  --bg-2:      #141413;
+  --surface:   #1C1C1A;
+  --surface-2: #252523;
+  --border:    #2E2E2C;
+  --border-2:  #3F3F3D;
+  --text:      #EDECEA;
+  --text-2:    #C6C5C1;
+  --text-mute: #888886;
+  --field-bg:  #1C1C1A;
+  --field-bd:  #2E2E2C;
   --shadow:    0 1px 0 rgba(255,255,255,0.04);
 }
 
