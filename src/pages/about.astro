@@ -21,9 +21,21 @@ import Callout from '../components/Callout.astro';
         <p class="meaning-text">
           The ancient teaching is that Shefa can be cultivated. A giving mindset and a heart of servitude open the channel. Imagine a brilliant beam from a spotlight, reaching toward a performer on stage — that is the flow of God's beneficence in every form. This is Actionable Abundance: the belief that how we orient ourselves determines whether that flow reaches us.
         </p>
-        <p class="meaning-text">
-          This is biblically grounded. <em>"Be anxious about nothing, but give thanks in everything."</em> <em>"We do not have a spirit of fear, but of power, love, and a sound mind."</em> Living in fear takes us out of the flow of Shefa.
-        </p>
+        <div class="scripture-block">
+          <blockquote class="scripture-quote">
+            <p>"Be anxious about nothing, but in everything by prayer and supplication, with thanksgiving, let your requests be made known to God."</p>
+            <cite>Philippians 4:6</cite>
+          </blockquote>
+          <blockquote class="scripture-quote">
+            <p>"For God has not given us a spirit of fear, but of power and of love and of a sound mind."</p>
+            <cite>2 Timothy 1:7</cite>
+          </blockquote>
+          <blockquote class="scripture-quote">
+            <p>"Finally, brethren, whatever things are true, whatever things are noble, whatever things are just, whatever things are pure, whatever things are lovely, whatever things are of good report, if there is any virtue and if there is anything praiseworthy — meditate on these things."</p>
+            <cite>Philippians 4:8</cite>
+          </blockquote>
+        </div>
+        <p class="meaning-text">Living in fear takes us out of the flow of Shefa.</p>
         <p class="meaning-text">
           The name is a declaration. Everything we build — the acquisitions, the operating systems, the partnerships — starts from this premise: that when businesses are run well and led with integrity, abundance follows. And when it does, it should go somewhere meaningful.
         </p>
@@ -111,6 +123,35 @@ import Callout from '../components/Callout.astro';
   .meaning-text em {
     color: var(--text);
     font-style: italic;
+  }
+
+  .scripture-block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 16px;
+  }
+
+  .scripture-quote {
+    border-left: 3px solid var(--gold);
+    padding: 12px 20px;
+    background: var(--surface);
+    margin: 0;
+  }
+
+  .scripture-quote p {
+    font-size: 0.95rem;
+    color: var(--text-2);
+    line-height: 1.75;
+    font-style: italic;
+    margin: 0 0 8px;
+  }
+
+  .scripture-quote cite {
+    font-size: 0.78rem;
+    color: var(--gold);
+    font-style: normal;
+    letter-spacing: 0.04em;
   }
 
   .principles {
