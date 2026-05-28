@@ -13,7 +13,7 @@ interface Props {
 
 const {
   title,
-  description = 'Shefa Group — purpose-driven operating company building scalable businesses and the people who run them.',
+  description = 'Shefa — purpose-driven operating company building scalable businesses and the people who run them.',
   footerDisclaimer,
 } = Astro.props;
 ---
@@ -25,7 +25,7 @@ const {
     <meta name="description" content={description} />
     <meta http-equiv="Content-Security-Policy"
       content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src https://api.web3forms.com; font-src 'self'; frame-ancestors 'none';" />
-    <title>{title} — Shefa Group</title>
+    <title>{title} — Shefa</title>
     <link rel="icon" type="image/png" href="/images/shefa-logo.png" />
     <slot name="head" />
   </head>
